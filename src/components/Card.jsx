@@ -23,10 +23,10 @@ const Card = ({ result }) => {
                     <h2 className='text-lg font-bold truncate'>
                         {result.title || result.name}
                     </h2>
-                    <p className='line-clamp-3 text-md'>
+                    <p className='line-clamp-3 text-sm md:text-md'>
                         {result.overview}
                     </p>
-                    <p className='flex items-center'>
+                    <p className='flex items-center text-sm'>
                         {result.release_date || result.first_air_date}
                     </p>
                 </div>
