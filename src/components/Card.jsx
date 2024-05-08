@@ -4,7 +4,7 @@ import { Image } from '@chakra-ui/react'
 
 const Card = ({ result }) => {
     return (
-        <div className='group cursor-pointer sm:hover:shadow-slate-400 sm:shadow-md rounded-lg sm:border sm:border-slate-400 sm:m-2 transition-shadow duration-200 mt-8'>
+        <div className='group cursor-pointer sm:hover:shadow-slate-400 sm:shadow-md rounded-lg  sm:m-2 transition-shadow duration-200 mt-8'>
             <Link to={`/movie/${result.id}`}>
                 <Image
                     src={`https://image.tmdb.org/t/p/original/${result.backdrop_path || result.poster_path}`}

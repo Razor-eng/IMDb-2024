@@ -1,7 +1,7 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react'
 import Results from '../components/Results';
-import { useLocation } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import Pagination from '../components/Pagination';
 const API_KEY = "728d13d30634bbf39374eced9e959d2e";
 
@@ -10,6 +10,14 @@ const SearchPage = () => {
     const { pathname } = useLocation();
     let [pageNum, setPage] = useState(1);
     const movieName = pathname.split(":")[1]
+    const navigate = useNavigate();
+
+    useEffect(() => {
+        if (movieName === '') {
+            navigate('/');
+        }
+    }, [movieName, navigate])
+
 
     useEffect(function () {
         (function () {
@@ -43,7 +51,7 @@ const SearchPage = () => {
                 <>
                     <Results results={movies} />
                     {
-                        movies.length !== 0 &&
+                        (movies.length !== 0 && movies.length > 20) &&
                         (
                             <Pagination
                                 pageNum={pageNum}

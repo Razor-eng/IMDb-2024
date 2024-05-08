@@ -9,7 +9,7 @@ const utheme = {
     styles: {
         global: (props) => ({
             body: {
-                bg: mode("gray.100", "gray.700")(props),
+                bg: mode("#F4F4F5", "#212121")(props),
                 color: mode("gray.800", "whiteAlpha.900")(props),
             }
         })
